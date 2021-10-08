@@ -1,0 +1,49 @@
+<!-- index.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+<body>
+    <div id="container">
+        <div id="circle">
+            <div id="hr">
+                <div id="hh" class="hh"></div>
+            </div>
+            <div id="min">
+                <div id="mh"class="mh">
+
+                </div>
+            </div>
+            <div id="sec">
+                <div id="sh" class="sh"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const deg1=6;
+        const hr=document.getElementById("hh");
+        const mh=document.getElementById("mh");
+        const sh=document.getElementById("sh");
+        setInterval(() => 
+        {
+            let day = new Date();
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * deg1;
+            let ss = day.getSeconds() * deg1;
+
+            hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+            mh.style.transform = `rotateZ(${mm}deg)`;
+            sh.style.transform = `rotateZ(${ss}deg)`;
+        
+        });
+        
+        
+        
+    </script>
+</body>
+
+</html>
